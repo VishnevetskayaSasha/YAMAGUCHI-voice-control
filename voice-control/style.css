@@ -1,0 +1,245 @@
+@import url(./vendor/fonts.css);
+@import url(./vendor/normalize.css);
+
+.main {
+    background-color: #181818;
+    background-image: url("./img/bg.png");
+    color:  #FFFFFF;
+    font-family: "Montserrat";
+    font-weight: 400;
+}
+.main__content {
+    padding: 0 26px 86.59px;
+    margin: 0 auto ;
+    max-width: 1980px;
+    display: grid;
+}
+.main__content-text {
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.main__title {
+    max-width: 400px;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 62.4px;
+    margin: 73px 0 0;
+}
+.main__text {
+    font-size: 22px;
+    line-height: 37.4px;
+    margin: 0 0 20px;
+    max-width: 528px;
+}
+.main__special-text {
+    text-transform: uppercase;
+    font-size: 44.79px;
+    line-height: 40.31px;
+    font-weight: 900;
+    margin: 0 0 20px;
+}
+.main__text-quote {
+    display: block;
+    margin: 20px 0 0 59.28px;
+    text-transform: uppercase;
+    font-size: 61.42px;
+    line-height: 55.27px;
+}
+.main__text-quote span{
+    font-weight: 400;
+}
+.main__content-img {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    display: flex;
+    align-items: center;
+}
+.main__img {
+    max-width: 100%;
+}
+.main__content-quote{
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.main__content-animate {
+    position: relative;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    
+}
+.main__block-girl{
+    overflow: hidden;
+}
+.main__animate-girl {
+    z-index: 100;
+    position: relative;
+    opacity: 0;
+}
+.main__animate-hole {
+    position: absolute;
+    left: 25%;
+    bottom: 10px;
+}
+
+@keyframes heartBeat {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0)
+    }
+    55% {
+        -webkit-transform: scale(2);
+        transform: scale(2)
+    }
+    100%{
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+.animate__heartBeat{
+    animation-duration: 4s;
+    animation-name: heartBeat;
+}
+
+@keyframes girl-up {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0,100%,0);
+        transform: translate3d(0,100%,0)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+
+.animate__girl-up{
+    animation-duration: 3s;
+    animation-name: girl-up;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes girl-levitate{
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, -20px, 0);
+    }
+}
+
+.animate__girl-levitate{
+    animation: girl-levitate 2s ease-in-out infinite alternate;
+    transform-origin: center;
+    transform: translate3d(0, 0, 0);
+    z-index: 100;
+    position: relative;
+}
+@media screen and (max-width: 1890px){
+    .main__animate-hole {
+        bottom: -30px;
+    }
+}
+@media screen and (max-width: 1500px){
+    .main__content-text{
+        grid-row-start: 1;
+        grid-row-end: 2;
+        margin: 0 auto;
+        width: 80%;
+    }
+    .main__content-animate{
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    .main__content-quote{
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+    .main__content-img{
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+    .main__animate-girl{
+        margin: 0 auto;
+        display: block;
+    }
+    .main__animate-hole{
+        left: 43%;
+    }
+    .main__title{
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    .main__text{
+        max-width: 100%;
+    }
+    .main__img{
+        margin: 60px auto;
+    }
+    .main__special-text{
+        text-align: center;
+        margin-top: 30px;
+    }
+    .main__animate-hole{
+        left: calc(100% / 2 - 97.5px);
+    }
+}
+
+@media screen and (max-width: 750px){
+    .main__content{
+        padding: 0 7px 86.59px;;
+    }
+    .main__title{
+        margin: 17.32px 0 33.43px;
+        font-size: 34px;
+        line-height: 34px;
+    }
+    .main__text{
+        font-size: 16px;
+        line-height: 27.2px;
+    }
+    .main__special-text{
+        font-size: 38.65px;
+        line-height: 34.79px;
+        text-align: left;
+    }
+    .main__text-quote{
+        font-size: 49.86px;
+        line-height: 44.87px;
+        margin: 20px 0 0 0;
+    }
+    .main__content-text{
+        width: 100%;
+    }
+    .main__animate-girl{
+        max-width: 320px;
+    }
+    .main__img{
+        width: 80%;
+        margin: 60px auto 0;
+    }
+    .main__animate-hole{
+        width: 150px;
+        left: calc(100% / 2 - 75px);
+    }
+}
+@media screen and (max-width: 400px){
+    .main__title{
+        max-width: 227px;
+    }
+    .main__text{
+        max-width: 289px;
+    }
+    .main__special-text{
+        max-width: 320px;
+    }
+}
+
+
+
+
+
+
+    
